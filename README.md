@@ -1,5 +1,6 @@
-Piano Playground is a music game/app that allows you to visualize
-and play with the most important and popular scales in Western music 
+--Ongoing project--
+Piano Playground is a music game/app for mobile devices that allows you 
+to visualize and play with the most important and popular scales in Western music 
 through the most used instrument for learning music theory and scales:
 THE PIANO!
 
