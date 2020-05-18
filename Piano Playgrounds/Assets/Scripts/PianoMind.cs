@@ -6,19 +6,27 @@ using UnityEngine;
 public class PianoMind : MonoBehaviour
 {
     public static AudioClip C, D, E, F, G, A, B;
+
     static AudioSource audioSrc;
+    string[] pianos = {"organ", "xylophone", "standard", "synth"};
+    string currPiano = PlayerPrefs.GetString("currentPiano");
+
     // Start is called before the first frame update
     void Start()
     {
+	//switch (month) {
+        //    case 1:  currPiano = "organ";
+         //            break;
+         //   case 2:  currPiano = "xylophone";
+         //            break;
+       // }
         C = Resources.Load<AudioClip> ("xylophone-c");
         D = Resources.Load<AudioClip> ("xylophone-d");
         E = Resources.Load<AudioClip> ("xylophone-e1");
         F = Resources.Load<AudioClip> ("xylophone-f");
         G = Resources.Load<AudioClip> ("xylophone-g");
         A = Resources.Load<AudioClip> ("xylophone-a");
-	B = Resources.Load<AudioClip> ("xylophone-b");
-
-
+	    B = Resources.Load<AudioClip> ("xylophone-b");
         audioSrc = GetComponent<AudioSource> ();
     }
 
