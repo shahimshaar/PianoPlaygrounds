@@ -18,6 +18,9 @@ public class MainMenu : MonoBehaviour
       SceneManager.LoadScene("Piano Playground");
    }
 
+  public void SelectPiano(){
+      SceneManager.LoadScene("Piano Selection");
+   }
     // Update is called once per frame
    // void Update()
    // {

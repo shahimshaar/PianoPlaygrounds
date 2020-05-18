@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Piano Playground.unity
     guid: 0b24c900e2055624d96fc6218b6fc666
+  - enabled: 1
+    path: Assets/Scenes/#1 Ionian.unity
+    guid: 6a3f39a26ad659a4c893bf1b5c802d03
   m_configObjects: {}

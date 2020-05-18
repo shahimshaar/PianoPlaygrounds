@@ -15,7 +15,7 @@ using UnityEngine.UI;
 
      void Start()
         {
-        PlayerPrefs.SetString("currPiano", "xylophone");
+        //PlayerPrefs.SetString("currPiano", "xylophone");
         currentPiano = PlayerPrefs.GetString("currPiano");
          C.onClick.AddListener(delegate {PlaySound(currentPiano+"-"+"C"); });
          CS.onClick.AddListener(delegate {PlaySound(currentPiano+"-"+"CS"); });
