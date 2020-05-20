@@ -15,8 +15,8 @@ using UnityEngine.UI;
 
      void Start()
         {
-        //PlayerPrefs.SetString("currPiano", "xylophone");
-        currentPiano = PlayerPrefs.GetString("currPiano");
+        //PlayerPrefs.SetString("currPiano", "standard");
+         currentPiano = PlayerPrefs.GetString("currPiano");
          C.onClick.AddListener(delegate {PlaySound(currentPiano+"-"+"C"); });
          CS.onClick.AddListener(delegate {PlaySound(currentPiano+"-"+"CS"); });
          D.onClick.AddListener(delegate {PlaySound(currentPiano+"-"+"D"); });
@@ -32,6 +32,16 @@ using UnityEngine.UI;
          C2.onClick.AddListener(delegate {PlaySound(currentPiano+"-"+"C2"); });
          audioSrc = GetComponent<AudioSource> ();
          }
+
+     void Update()
+     {
+        if(currentPiano != PlayerPrefs.GetString("currPiano")){
+                 currentPiano = PlayerPrefs.GetString("currPiano");}
+        else{
+            Debug.Log("gucci");}
+     }
+
+
 
      void PlaySound(string note){
           if(note==null)

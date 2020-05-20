@@ -6,10 +6,15 @@ using UnityEngine;
 public class MainMenu : MonoBehaviour
 {
     // Start is called before the first frame update
-   // void Start()
-   // {
-        
-   // }
+    void Start()
+    {
+     if((PlayerPrefs.GetString("currPiano"))==null){
+        PlayerPrefs.SetString("currPiano", "standard");
+     }
+     else{
+        Debug.Log("currPiano has already beene set");
+     }
+    }
    public void StartLearning(){
      SceneManager.LoadScene("#1 Ionian");
    }

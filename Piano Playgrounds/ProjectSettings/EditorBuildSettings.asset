@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/#1 Ionian.unity
     guid: 6a3f39a26ad659a4c893bf1b5c802d03
+  - enabled: 1
+    path: Assets/Scenes/Piano Selection.unity
+    guid: 48adad1584b220047a231680d206ce64
   m_configObjects: {}
