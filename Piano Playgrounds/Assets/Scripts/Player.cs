@@ -11,8 +11,13 @@ public class Player : MonoBehaviour
     void Start()
     {
 
-    //Button myButton;
-     // myButton.interactable = true;
+                    Vector3 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    Vector3 vectorToTarget = mouse - transform.position;
+                    float angle = (Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg) - 90;
+                    Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+                    transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * 2000000);
+                    Vector3 target = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.z));
+                    Vector3 myPos = new Vector3(transform.position.x, transform.position.y + .203f, 0);
         
     }
 
