@@ -14,13 +14,16 @@ using UnityEngine.UI;
        public int counter;
        public string[] notes = {"C","D","E","F","G","A","B","C2"};
        public bool unlock;
-        public GameObject player;
+        public GameObject player,currButton;
+        // public GameObject idleanimation, jumpanimation;
+        public vector3 newlocation;
 
 
 
      void Start()
         {
         //PlayerPrefs.SetString("currPiano", "standard");
+        player = GameObject.FindWithTag("Player");
          unlock = false;
          counter = 0;
 
@@ -47,12 +50,17 @@ using UnityEngine.UI;
 
 
      void PlaySound(string note){
+        //currButton = GameObject.FindWithTag(note);
+        //newlocation = currButton.transform.position;
+          currButton = GameObject.Find(note);
+          player.transform.position = currButton.transform.position;
           if(unlock==true){
                   theOne = Resources.Load<AudioClip>(currentPiano+"-"+note);
                   audioSrc.PlayOneShot(theOne);
           }
           else if(note=="C2" && nextNote=="C2"){
             unlock = true;
+            counter = 0;
             theOne = Resources.Load<AudioClip>(currentPiano+"-"+note);
             audioSrc.PlayOneShot(theOne);
           }

@@ -26,6 +26,10 @@ public class MainMenu : MonoBehaviour
   public void SelectPiano(){
       SceneManager.LoadScene("Piano Selection");
    }
+
+   public void About(){
+    SceneManager.LoadScene("About");
+   }
     // Update is called once per frame
    // void Update()
    // {
