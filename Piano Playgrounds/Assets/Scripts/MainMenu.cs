@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetString("currPiano", "standard");
      }
      else{
-        Debug.Log("currPiano has already beene set");
+        Debug.Log("currPiano has already been set");
      }
     }
    public void StartLearning(){

@@ -7,9 +7,12 @@ using UnityEngine.UI;
  {
      //Make sure to attach these Buttons in the Inspector
      public Button C, CS, C2, C2S, D,DS,D2,D2S, E,E2, F,F2, FS,F2S, G,GS,G2,G2S, A, AS,A2,A2S, B, B2, C3;
+     public Sprite white, yellow, blue, purple, green, pink, black, red;
      public  AudioClip theOne;
      public AudioSource audioSrc;
      public string currentPiano;
+     public GameObject frame;
+
 
 
 
@@ -17,6 +20,7 @@ using UnityEngine.UI;
         {
         //PlayerPrefs.SetString("currPiano", "standard");
          currentPiano = PlayerPrefs.GetString("currPiano");
+         frame = GameObject.FindWithTag("frame");
          C.onClick.AddListener(delegate {PlaySound("C"); });
          CS.onClick.AddListener(delegate {PlaySound("CS"); });
          C2.onClick.AddListener(delegate {PlaySound("C2"); });
@@ -60,16 +64,53 @@ using UnityEngine.UI;
             Debug.Log("null val");
           theOne = Resources.Load<AudioClip>(currentPiano+"-"+note);
           audioSrc.PlayOneShot(theOne);
+          switch (note) {
+                      case "A":
+                      case "B":
+                      case "C":
+                         frame.GetComponent<SpriteRenderer>().sprite = yellow;
+                         break;
+                      case "D":
+                      case "E":
+                      case "F":
+                         frame.GetComponent<SpriteRenderer>().sprite = red;
+                          break;
+                      case "G":
+                      case "A2":
+                      case "B2":
+                         frame.GetComponent<SpriteRenderer>().sprite = blue;
+                          break;
+                      case "C2":
+                      case "D2":
+                      case "E2":
+                         frame.GetComponent<SpriteRenderer>().sprite = green;
+                            break;
+                      case "F2":
+                      case "G2":
+                      case "C3":
+                         frame.GetComponent<SpriteRenderer>().sprite = purple;
+                            break;
+                      case "CS":
+                      case "C2S":
+                      case "DS":
+                         frame.GetComponent<SpriteRenderer>().sprite = white;
+                         break;
+                      case "D2S":
+                      case "FS":
+                      case "F2S":
+                          frame.GetComponent<SpriteRenderer>().sprite = black;
+                          break;
+                      case "GS":
+                      case "G2S":
+                      case "AS":
+                      case "A2S":
+                          frame.GetComponent<SpriteRenderer>().sprite = pink;
+                          break;
+                      default:
+                          break;
+                   }
      }
 
  }
-
- // To use this example, attach this script to an empty GameObject.
- // Create three buttons (Create>UI>Button). Next, select your
- // empty GameObject in the Hierarchy and click and drag each of your
- // Buttons from the Hierarchy to the Your First Button, Your Second Button
- // and Your Third Button fields in the Inspector.
- // Click each Button in Play Mode to output their message to the console.
- // Note that click means press down and then release.
 
 
